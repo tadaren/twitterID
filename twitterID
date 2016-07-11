@@ -7,9 +7,9 @@ import twitter4j.*;
 import twitter4j.conf.ConfigurationBuilder;
 
 public class twitterID {
-	private static final String bearer1 = "AAAAAAAAAAAAAAAAAAAAADGVvwAAAAAAFKyuU4ffMmsa3JcK1BgP2r2f3c8%3DgZRFWIFgGkgpfBHz5HoHLPeNjj0kWYMPbmneXb2XvcB07qYYTt";
-	private static final String consumerKey = "N7HnEAVvLdTqlmB3XZwgaik6o";
-	private static final String consumerS = "JXnsaV7OQkTv56AvibG5vYfk41wp1r2Nrqr289gFCFND1KJ6BE";
+	private static final String bearer1 = "";
+	private static final String consumerKey = "";
+	private static final String consumerS = "";
 
 	public static void conf(){
 		ConfigurationBuilder cb = new ConfigurationBuilder();
