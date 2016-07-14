@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 public class DB_File {
 
 	public static File lookfile1(){
-		File file = new File(".\\DB_twitter.txt");
+		File file = new File(".\\DB_twitter.txt"); //ファイル
 		if(!(file.exists())){
 			try {
 				file.createNewFile();
