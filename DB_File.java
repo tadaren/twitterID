@@ -15,22 +15,22 @@ import java.util.regex.Pattern;
 public class DB_File {
 
 	public static File lookfile1(){
-		File file = new File(".\\DB_twitter.txt"); //ファイル
-		if(!(file.exists())){
+		File file = new File(".\\DB_twitter.txt"); //ファイルクラスの作成
+		if(!(file.exists())){ //ディレクトリが存在するかを確認する
 			try {
-				file.createNewFile();
-				FileWriter fr = new FileWriter(file);
-				fr.write("ID半スペース	＝半スペース名前半スペースタブ半スペースID\n");
-				fr.close();
-			} catch (IOException e) {
+				file.createNewFile(); //存在しなければディレクトリを作成
+				FileWriter fr = new FileWriter(file); //書き込み用クラスの作成
+				fr.write("ID半スペース＝半スペース名前半スペースタブ半スペースID\n"); //1行目の文を書き込む
+				fr.close(); //クラスを閉じる
+			} catch (IOException e) { //エラー処理
 				e.printStackTrace();
-				new errorWindow();
+				new errorWindow(); //エラーウィンドウを作成する
 			}
 		}
-		return file;
+		return file; //返り値にファイルを返す
 	}
 
-	public static File lookfile(){
+	public static File lookfile(){ 
 		File file = new File(".\\DB\\DB_twitter.txt");
 		File filed = new File(".\\DB");
 		if(!(filed.exists())){
@@ -40,7 +40,7 @@ public class DB_File {
 			try {
 				file.createNewFile();
 				FileWriter fr = new FileWriter(file);
-				fr.write("ID半スペース	＝半スペース名前半スペースタブ半スペースID");
+				fr.write("ID半スペース＝半スペース名前半スペースタブ半スペースID");
 				fr.close();
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -50,10 +50,11 @@ public class DB_File {
 		return file;
 	}
 
+        //DBからスクリーンネームを読み取りリストを返す
 	public static List<String> ReadID(){
-		List<String> DB_ID = new ArrayList<String>();
+		List<String> DB_ID = new ArrayList<String>(); //リストの作成
 		try {
-			File file = lookfile();
+			File file = lookfile(); //ファイルの確認
 			BufferedReader br = new BufferedReader(new FileReader(file));
 			String str = br.readLine();
 			Pattern pID = Pattern.compile("^[0-9a-zA-Z|_]+ ");
