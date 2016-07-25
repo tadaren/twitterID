@@ -168,9 +168,9 @@ public class DB_File {
 					b = false;
 				}
 			}else{//データ数が100以上の時
-				int n = (dID.length/2)+1;
-				for(int j=0; j<n; j++){
-					long[] l = Arrays.copyOfRange(dID, 100*j+1, 100*(j+1));
+				int n = (dID.length/2)+1; //配列の長さを100で割って＋1した値の変数
+				for(int j=0; j<n; j++){ //上の変数の数だけループさせる
+					long[] l = Arrays.copyOfRange(dID, 100*j+1, 100*(j+1));百ごとに区切ったlong配列を作る
 					String[] ScID = (String[])twitterID.SCName(l).clone();
 					for(int i=0; i<100; i++){
 						strb.append(ScID[i]+" ＝ "+DBName[i]+" \t "+dID[i]+"\n");
